@@ -1,8 +1,8 @@
 # Build stage
 FROM node:20-alpine AS builder
 
-# Install bun
-RUN apk add --no-cache curl unzip && \
+# Install bun (requires bash)
+RUN apk add --no-cache curl unzip bash && \
     curl -fsSL https://bun.sh/install | bash && \
     ln -s /root/.bun/bin/bun /usr/local/bin/bun
 
@@ -12,7 +12,7 @@ WORKDIR /app
 COPY package.json bun.lockb ./
 
 # Install dependencies
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Copy source code
 COPY . .

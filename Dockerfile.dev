@@ -1,8 +1,8 @@
 # Development Dockerfile with hot reload
 FROM node:20-alpine
 
-# Install bun
-RUN apk add --no-cache curl unzip && \
+# Install bun (requires bash)
+RUN apk add --no-cache curl unzip bash && \
     curl -fsSL https://bun.sh/install | bash && \
     ln -s /root/.bun/bin/bun /usr/local/bin/bun
 
