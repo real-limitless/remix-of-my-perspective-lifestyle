@@ -24,7 +24,8 @@ RUN bun run build
 FROM nginx:alpine
 
 # Copy custom nginx config
-COPY <<EOF /etc/nginx/conf.d/default.conf
+RUN mkdir -p /etc/nginx/conf.d
+RUN cat > /etc/nginx/conf.d/default.conf <<'EOF'
 server {
     listen 80;
     server_name localhost;
@@ -32,7 +33,7 @@ server {
     index index.html;
 
     location / {
-        try_files \$uri \$uri/ /index.html;
+        try_files $uri $uri/ /index.html;
     }
 
     # Cache static assets
