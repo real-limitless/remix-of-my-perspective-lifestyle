@@ -28,7 +28,7 @@ services:
     ports:
       - "5175:5173"
     volumes:
-      - /app/node_modules
+      - /workspace/node_modules
     environment:
       - NODE_ENV=development
     restart: unless-stopped
