@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite --host 0.0.0.0",
-    "build": "bunx --bun vite build",
-    "build:dev": "bunx --bun vite build --mode development",
+    "dev": "npx vite --host 0.0.0.0",
+    "build": "npx vite build",
+    "build:dev": "npx vite build --mode development",
     "lint": "eslint .",
-    "preview": "bunx --bun vite preview"
+    "preview": "npx vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
