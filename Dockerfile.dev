@@ -22,4 +22,4 @@ COPY . .
 EXPOSE 5173
 
 # Install deps at runtime (in case volume overwrites node_modules) and start dev server
-CMD ["bash", "-c", "bun install && /usr/local/bin/bunx --bun vite --host 0.0.0.0"]
+CMD ["bash", "-c", "bun install && ./node_modules/.bin/vite --host 0.0.0.0"]
