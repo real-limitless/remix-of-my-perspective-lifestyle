@@ -21,5 +21,5 @@ COPY . .
 # Expose Vite dev server port
 EXPOSE 5173
 
-# Start development server
-CMD ["bun", "run", "dev"]
+# Install deps at runtime (in case volume overwrites node_modules) and start dev server
+CMD ["sh", "-c", "bun install && bunx --bun vite --host 0.0.0.0"]
